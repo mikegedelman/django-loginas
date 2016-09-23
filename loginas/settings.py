@@ -4,7 +4,7 @@ USER_SESSION_FLAG = getattr(settings, "LOGINAS_FROM_USER_SESSION_FLAG", "loginas
 
 CAN_LOGIN_AS = getattr(settings, "CAN_LOGIN_AS", lambda r, y: r.user.is_superuser)
 
-LOGIN_REDIRECT = getattr(settings, "LOGINAS_REDIRECT_URL", settings.LOGIN_REDIRECT_URL)
+LOGIN_REDIRECT = getattr(settings, "LOGINAS_REDIRECT_URL", lambda r: settings.LOGIN_REDIRECT_URL)
 
 MESSAGE_LOGIN_SWITCH = getattr(
     settings,

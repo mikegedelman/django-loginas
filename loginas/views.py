@@ -69,7 +69,7 @@ def user_login(request, user_id):
 
     login_as(user, request)
 
-    return redirect(la_settings.LOGIN_REDIRECT)
+    return redirect(la_settings.LOGIN_REDIRECT(user))
 
 
 def user_logout(request):
